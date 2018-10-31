@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title> Admin </title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/admin.css') }}">
+  </head>
+  <body>
+    <div id="navbar">
+      <img class="quiz_logo" src="{{ url_for('static',filename='quiz_logo.png') }}">
+      <span class="nav_title"> Admin </span>
+    </div>
+    <div class="wrapper">
+      <form name="admin_query" action="{{ url_for('admin_query') }}" method="POST">
+        <textarea rows="8" cols="80" name="query" placeholder="Write query here" required></textarea>
+        <div class="submit_btn">
+            <input type="submit" value="submit" />
+        </div>
+        {% if error %}
+          <div class="error_msg">
+            <p class="error"><strong>{{ error }}</strong>
+            <span onclick="this.parentElement.style.display='none'"
+            class="error_close" class="error_close">&times;</span>
+          </div>
+        {% else %}
+          <div class="response">
+            {% for i in rows %}
+              {{i}} <br />
+            {% endfor %}
+          </div>
+        {% endif %}
+      </form>
+    </div>
+
+    <script>
+    var prevScrollpos = window.pageYOffset;
+    window.onscroll = function() {
+    var currentScrollPos = window.pageYOffset;
+      if (prevScrollpos === currentScrollPos) {
+        document.getElementById("navbar").style.top = "0";
+      } else {
+        document.getElementById("navbar").style.top = "-80px";
+      }
+    }
+    </script>
+  </body>
+</html>

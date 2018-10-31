@@ -1,0 +1,111 @@
+body{
+  margin: 0;
+  padding: 0;
+  background: #efefef;
+  font-size: 16px;
+  color: #777;
+  font-family: sans-serif;
+  font-weight: 300;
+}
+
+#signup-box{
+  position: relative;
+  margin: 5% auto;
+  box-sizing: border-box;
+  padding: 40px;
+  width: 300px;
+  height: 400px;
+  background: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+h1{
+  margin: 0 0 20px 0;
+  font-weight: 300;
+  font-size: 28px;
+}
+
+input[type="text"], input[type="email"]{
+  display: block
+  box-sizing: border-box;
+  margin-bottom: 20px;
+  padding: 4px;
+  width: 220px;
+  height: 32px;
+  border:none;
+  /* outline:none; */
+  border-bottom: 1px solid #aaa;
+  font-weight: 400;
+  font-size: 15px;
+  /* transition: 0.2s ease; */
+}
+
+p{
+  margin-bottom: 10px;
+}
+
+.container {
+    display: block;
+    position: relative;
+    padding-left: 25px;
+    margin-bottom: 10px;
+    margin-left: 5px;
+    font-size: 16px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* Hide the browser's default radio button */
+.container input {
+    position: absolute;
+    opacity: 0;
+}
+
+/* Create a custom radio button */
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 16px;
+    width: 16px;
+    background-color: #eee;
+    border-radius: 50%;
+}
+
+.container:hover input ~ .checkmark {
+    background-color: #00D5F1;
+}
+
+/* When the radio button is checked, add a blue background */
+.container input:checked ~ .checkmark {
+    background-color: #00D5F1;
+}
+
+.submit_btn{
+  text-align: center;
+}
+
+input[type="submit"]{
+  margin-top: 15px;
+  /* margin-bottom: 28px; */
+  width: 130px;
+  height: 32px;
+  background:#00D5F1;
+  border-radius: 25px;
+  border: none;
+  color: #fff;
+  font-weight:600;
+  text-transform: uppercase;
+}
+
+input[type="submit"]:hover{
+  background:#00C8E2;
+  cursor: pointer;
+}
+
+.error_close:hover{
+  background: #00D5F1;
+  cursor: pointer;
+}

@@ -1,0 +1,16 @@
+<!doctype html>
+<html>
+   <body>
+     {% if error %}
+       <div class="error_msg">
+         <p class="error"><strong>{{ error }}</strong>
+         <span onclick="this.parentElement.style.display='none'"
+         class="error_close" class="error_close">&times;</span>
+       </div>
+
+     {% else %}
+      Thank you! Your answers have been submitted!
+
+     {% endif %}
+   </body>
+</html>
